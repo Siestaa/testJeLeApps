@@ -1,0 +1,123 @@
+.cubeContainer {
+	perspective: 1000px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: calc(100dvh - 40px);
+	max-height: 100dvh;
+	width: calc(100vw - 80px);
+	max-width: 100dvw;
+	margin: 20px 40px;
+	position: relative;
+	box-sizing: border-box;
+	max-width: 100vw;
+	max-height: 100dvh;
+	background-color: #223344;
+	font-weight: 400;
+	font-style: normal;
+	overflow: hidden;
+	scrollbar-width: none;
+}
+
+@media(max-width: 1280px) {
+	.cubeContainer {
+		height: calc(100dvh - 40px);
+		max-height: 100dvh;
+		width: calc(100vw - 40px);
+		max-width: 100dvw;
+		margin: 20px 20px;
+	}
+}
+
+
+@media(max-width: 780px) {
+	.cubeContainer {
+		height: calc(100dvh - 20px);
+		max-height: 100dvh;
+		width: calc(100vw - 20px);
+		max-width: 100dvw;
+		margin: 10px 10px;
+	}
+}
+
+.cube {
+	width: 40dvh;
+	aspect-ratio: 1/1;
+	transform-style: preserve-3d;
+	transform-origin: center;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.side {
+	background-color: #000;
+	position: absolute;
+	width: 40dvh;
+	aspect-ratio: 1/1;
+	border: 1px solid white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 84px;
+
+	&[data-side='1'] {
+		transform: translateZ(20dvh);
+	}
+
+	&[data-side='2'] {
+		transform: rotateY(180deg) translateZ(20dvh);
+	}
+
+	&[data-side='3'] {
+		transform: rotateY(90deg) translateZ(20dvh);
+	}
+
+	&[data-side='4'] {
+		transform: rotateY(-90deg) translateZ(20dvh);
+	}
+
+	&[data-side='5'] {
+		transform: rotateX(90deg) translateZ(20dvh);
+	}
+
+	&[data-side='6'] {
+		transform: rotateX(-90deg) translateZ(20dvh);
+	}
+}
+
+@media (orientation: portrait) {
+	.cube {
+		width: 70dvw;
+	}
+
+	.side {
+		width: 70dvw;
+
+		&[data-side='1'] {
+			transform: translateZ(35dvw);
+		}
+
+		&[data-side='2'] {
+			transform: rotateY(180deg) translateZ(35dvw);
+		}
+
+		&[data-side='3'] {
+			transform: rotateY(90deg) translateZ(35dvw);
+		}
+
+		&[data-side='4'] {
+			transform: rotateY(-90deg) translateZ(35dvw);
+		}
+
+		&[data-side='5'] {
+			transform: rotateX(90deg) translateZ(35dvw);
+		}
+
+		&[data-side='6'] {
+			transform: rotateX(-90deg) translateZ(35dvw);
+		}
+	}
+
+
+}
